@@ -4,11 +4,11 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
- .container{ background-image: url("../Images/undraw_raining_re_4b55.svg");
+.container {
+  background-image: url("../Images/undraw_raining_re_4b55.svg");
   background-repeat: no-repeat;
-  background-position:left top 100%;
+  background-position: left top 100%;
   background-size: 80%;
-  
 }
 
 .wrapper {
@@ -24,27 +24,38 @@ h2 {
   font-size: 50px;
   color: #ffde74;
 }
-.tempC, .tempF {font-weight: 200;
-text-decoration: none;
-font-size: 25px;}
+.tempC,
+.tempF {
+  font-weight: 200;
+  text-decoration: none;
+  font-size: 25px;
+}
 
 p {
   font-weight: 300;
 }
 
-.list-group-item {background: none;
-position: relative;}
+.list-group-item {
+  background: none;
+  position: relative;
+  font-weight: 300;
+}
 .card {
   border-radius: 15px;
   border-width: 2px;
   background: #eaf6f6;
   border-color: #eaf6f6;
 }
-
+.search-bar {
+  margin-top: 10px;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
 .btn {
+  margin-top: 10px;
   background: #fa958e;
   border: 1px solid white;
   border-color: #fa958e;
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 .card-title {
