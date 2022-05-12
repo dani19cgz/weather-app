@@ -16,7 +16,7 @@ html {
 }
 h1 {
   font-weight: 600;
-  font-size: 60px;
+  font-size: 70px;
 }
 
 h2 {
@@ -41,21 +41,35 @@ p {
   font-weight: 300;
 }
 .card {
-  border-radius: 15px;
-  border-width: 2px;
-  background: #eaf6f6;
+  background: rgba(255, 255, 255, 0.39);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
   border-color: #eaf6f6;
 }
 .search-bar {
   margin-top: 10px;
-  border-radius: 0.25rem 0 0 0.25rem;
+  margin-bottom: 10px;
+  border-radius: 16px 0 0 16px;
+  background: rgba(255, 255, 255, 0.39);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
 }
 .btn {
   margin-top: 10px;
+  margin-bottom: 10px;
   background: #fa958e;
   border: 1px solid white;
   border-color: #fa958e;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 16px 16px 0;
+  color: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
 }
 
 .card-title {
