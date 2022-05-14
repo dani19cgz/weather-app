@@ -43,11 +43,24 @@ if (seconds < 10) {
 }
 ptimestamp.innerHTML = `${day}, ${month} ${currentdate}, ${year} ${hour}:${minutes}:${seconds}`;
 
+function getCityWeather(city) {
+    document.querySelector(`body`).backgroundImage = `url(https://source.unsplash.com/random/?${city})`;
+
+    let apiKEY = "90c3a32a0e06fb93eb6a122e67621bea";
+    let apiendpoint = "https://api.openweathermap.org/data/2.5/weather";
+    let apiURL = `${apiendpoint}?q=${city}&appid=${apiKEY}&units=metric`;
+
+    axios.get(apiURL).then(showTemperature);
+}
+
 function showTemperature(response) {
+  console.log(response.data);
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector("#randomCity").innerHTML = response.data.name;
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
 }
 
 let search = document.querySelector("#cityform");
@@ -55,15 +68,17 @@ let search = document.querySelector("#cityform");
 search.addEventListener("submit", function (event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
-  let body = document.querySelector(`body`)
-  body.style.backgroundImage = `url(https://source.unsplash.com/random/?${city})`;
-  console.log("#city-input");
-  let apiKEY = "90c3a32a0e06fb93eb6a122e67621bea";
-  let apiendpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiURL = `${apiendpoint}?q=${city}&appid=${apiKEY}&units=metric`;
-
-  axios.get(apiURL).then(showTemperature);
+  getCityWeather(city)
 });
+
+getCityWeather('Berlin')
+
+// function getForecast(coordinates) {
+//   let apiKey = "c26cb2147528c68477d823cc1d5509f4";
+//   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+//   axios.get(apiUrl).then(displayForecast);
+// }
 
 //let celsius = document.querySelector("#tempC");
 
