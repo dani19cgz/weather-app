@@ -44,13 +44,15 @@ if (seconds < 10) {
 ptimestamp.innerHTML = `${day}, ${month} ${currentdate}, ${year} ${hour}:${minutes}:${seconds}`;
 
 function getCityWeather(city) {
-    document.querySelector(`body`).backgroundImage = `url(https://source.unsplash.com/random/?${city})`;
+  document.querySelector(
+    `body`
+  ).backgroundImage = `url(https://source.unsplash.com/random/?${city})`;
 
-    let apiKEY = "90c3a32a0e06fb93eb6a122e67621bea";
-    let apiendpoint = "https://api.openweathermap.org/data/2.5/weather";
-    let apiURL = `${apiendpoint}?q=${city}&appid=${apiKEY}&units=metric`;
+  let apiKEY = "90c3a32a0e06fb93eb6a122e67621bea";
+  let apiendpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let apiURL = `${apiendpoint}?q=${city}&appid=${apiKEY}&units=metric`;
 
-    axios.get(apiURL).then(showTemperature);
+  axios.get(apiURL).then(showTemperature);
 }
 
 function showTemperature(response) {
@@ -61,6 +63,12 @@ function showTemperature(response) {
   document.querySelector("#randomCity").innerHTML = response.data.name;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#feeling").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
+  document.querySelector("#pressure").innerHTML = response.data.main.pressure;
 }
 
 let search = document.querySelector("#cityform");
@@ -68,10 +76,10 @@ let search = document.querySelector("#cityform");
 search.addEventListener("submit", function (event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
-  getCityWeather(city)
+  getCityWeather(city);
 });
 
-getCityWeather('Berlin')
+getCityWeather("Berlin");
 
 // function getForecast(coordinates) {
 //   let apiKey = "c26cb2147528c68477d823cc1d5509f4";

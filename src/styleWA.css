@@ -34,6 +34,7 @@ h2 {
 
 p {
   font-weight: 300;
+  text-transform: capitalize;
 }
 
 .list-group-item {
@@ -41,6 +42,7 @@ p {
   position: relative;
   font-weight: 300;
 }
+
 .card {
   background: rgba(255, 255, 255, 0.39);
   border-radius: 16px;
