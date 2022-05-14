@@ -32,6 +32,10 @@ h2 {
   font-size: 25px;
 }
 
+.active {color: black;
+}
+
+.active:hover {color: #f76b8a;}
 p {
   font-weight: 300;
   text-transform: capitalize;

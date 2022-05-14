@@ -78,14 +78,18 @@ function showTemperature(response) {
   fahrenheit.addEventListener("click", function changetoF(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temp");
+    celsius.classList.remove("active");
+    fahrenheit.classList.add("active");
     let Ftemperature = (response.data.main.temp * 9) / 5 + 32;
     temperatureElement.innerHTML = Math.round(Ftemperature);
   });
   let celsius = document.querySelector("#tempC");
   celsius.addEventListener("click", function changetoC(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+    event.preventDefault();
+    let temperature = document.querySelector("#temp");
+    celsius.classList.add("active");
+    fahrenheit.classList.remove("active");
+    temperature.innerHTML = Math.round(response.data.main.temp);
   });
 }
 
