@@ -55,6 +55,8 @@ let search = document.querySelector("#cityform");
 search.addEventListener("submit", function (event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
+  let body = document.querySelector(`body`)
+  body.style.backgroundImage = `url(https://source.unsplash.com/random/?${city})`;
   console.log("#city-input");
   let apiKEY = "90c3a32a0e06fb93eb6a122e67621bea";
   let apiendpoint = "https://api.openweathermap.org/data/2.5/weather";
