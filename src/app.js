@@ -44,9 +44,8 @@ if (seconds < 10) {
 ptimestamp.innerHTML = `${day}, ${month} ${currentdate}, ${year} ${hour}:${minutes}:${seconds}`;
 
 function getCityWeather(city) {
-  document.querySelector(
-    `body`
-  ).backgroundImage = `url(https://source.unsplash.com/random/?${city})`;
+  let body = document.querySelector("body");
+  body.style.backgroundImage = `url(https://source.unsplash.com/random/?${city})`;
 
   let apiKEY = "90c3a32a0e06fb93eb6a122e67621bea";
   let apiendpoint = "https://api.openweathermap.org/data/2.5/weather";
@@ -69,6 +68,12 @@ function showTemperature(response) {
     response.data.main.feels_like
   );
   document.querySelector("#pressure").innerHTML = response.data.main.pressure;
+  document
+    .querySelector("#icontemp")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 
 let search = document.querySelector("#cityform");
