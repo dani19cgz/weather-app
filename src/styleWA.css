@@ -4,11 +4,12 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-.container {
-  background-image: url("../Images/undraw_raining_re_4b55.svg");
+body {
+  background-image: url("https://source.unsplash.com/random/?berlin");
   background-repeat: no-repeat;
   background-position: left top 100%;
   background-size: 80%;
+  background-size: cover;
 }
 
 .wrapper {
