@@ -18,7 +18,7 @@
 <body>
   <div class="container">
     <div class="wrapper vh-100">
-      <div class="row justify-content-start h-100">
+      <div class="row justify-content-between h-100">
         <div class="col-12">
           <div class="entercity h-100">
             <div class="input-group mb-2 justify-content-end">
@@ -27,19 +27,20 @@
                 <input type="submit" value="Search" class="btn btn-outline-secondary">
               </form>
             </div>
-
-            <div class="row justify-content-center align-items-center h-75">
+            <div class="h-75 row justify-content-center align-items-center">
 <div class="row justify-content-between">
-              <div class="col-4">
-                <div class="card text-">
+              <div class="col-auto px-0">
+                <div class="card text">
                   <div class="card-body">
                 <h1 id="randomCity">Berlin</h1>
                 <p class="timestamp">Wednesday, 17:19</p>
                 <h2><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id="icontemp"><strong id="temp"> </strong><a href="" id="tempC" class="tempC active"> °C | </a><a href="" id="tempF"
                     class="tempF">°F</a></h2>
                 <p id="description">☁️ Cloudy</p>
-              </div></div></div>
-              <div class="col-4">
+              </div>
+            </div>
+          </div>
+              <div class="col-3 px-0">
                 <div class="row justify-content-between">
                   <div>
                     <div class="card text-center">
@@ -56,8 +57,9 @@
             </div>
           </div>
             </div>
-              <div class="row justify-content-center forecast">
-                <div class="col">
+            
+              <!-- <div class="row justify-content-center">
+                <div class="col id="forecast">
                   <div class="card text-center">
                     <div class="card-body">
                       <p class="card-title">Today</p>
@@ -102,13 +104,13 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div> --->
+            <div id="forecast"></div> 
+          </div>
           <a href="https://github.com/dani19cgz/weather-app">Open Source code</a> by Daniela Gonzalez
           </div>
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="src/app.js"></script>
 </body>
-
 </html>

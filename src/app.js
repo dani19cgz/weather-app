@@ -54,6 +54,31 @@ function getCityWeather(city) {
   axios.get(apiURL).then(showTemperature);
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+
+  let forecastHTML = `<div class="row justify-content-center">`;
+  days.forEach(function (day) {
+    forecastHTML = `${forecastHTML}
+      <div class="col">
+      <div class="justify-content-around">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <p class="card-title">${day}</p>
+                      <span><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id="icontemp" width="36"></span>
+                      <p> <span class="forecast-min">6°</span> <span class="forecast-max">13°</span></p>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   console.log(response.data);
   document.querySelector("#temp").innerHTML = Math.round(
@@ -91,6 +116,7 @@ function showTemperature(response) {
     fahrenheit.classList.remove("active");
     temperature.innerHTML = Math.round(response.data.main.temp);
   });
+  displayForecast();
 }
 
 let search = document.querySelector("#cityform");
@@ -103,9 +129,12 @@ search.addEventListener("submit", function (event) {
 
 getCityWeather("Berlin");
 
-// function getForecast(coordinates) {
-//   let apiKey = "c26cb2147528c68477d823cc1d5509f4";
-//   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+// //  {
+// //
+// //   forecastElement.innerHTML = "Forecast";
+// // }
+// // function getForecast(coordinates) {
+// //   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
-//   axios.get(apiUrl).then(displayForecast);
-// }
+// //   axios.get(apiUrl).then(displayForecast);
+// // }
